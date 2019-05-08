@@ -1,7 +1,7 @@
 from models.wizard import Wizard
 
 def main():
-	Wizard().randomChar()
+	Wizard()
 
 if __name__ == '__main__':
 	main()

@@ -3,6 +3,19 @@ from models.character import Character
 from models.tables import *
 
 class Wizard:
+	def __init__(self):
+		option = ""
+		while True:
+			print("\n\nGM RANDOM WIZARD\n")
+			print("\n\nChoose the option\n")
+			option = input("1 - Random Character\n2 - Wizard Character\n3 - Exit\n")
+			if option == "1":
+				self.randomChar()
+			elif option == "2":
+				print("Wizard...")
+			else:
+				break
+
 	def randomAS(self):
 		value = 0
 		rolls = []
