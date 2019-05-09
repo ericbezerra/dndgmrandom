@@ -8,13 +8,38 @@ class Wizard:
 		while True:
 			print("\n\nGM RANDOM WIZARD\n")
 			print("\n\nChoose the option\n")
-			option = input("1 - Random Character\n2 - Wizard Character\n3 - Exit\n")
+			option = input("1 - Random Character\n2 - Wizard Character\n3 - Another option\n4 - Exit\n")
 			if option == "1":
 				self.randomChar()
 			elif option == "2":
+				self.generateCharacter()
+			elif option == "3":
 				print("Wizard...")
 			else:
 				break
+
+	def generateCharacter(self):
+		c = Character(input("Type the name of player: "))
+		c.setRace(Tables().getRace())
+		c.setSubRace(Tables().getSubrace(c.race))
+		c.setGenre("Male")
+		c.setCharacterName(input("Type the name of character: "))
+		c.setClass(Tables().getClass())
+		c.setAlignment(Tables().getAlignment())
+		c.setStrenth(self.randomAS())
+		c.setDexterity(self.randomAS())
+		c.setConstitution(self.randomAS())
+		c.setInteligence(self.randomAS())
+		c.setWisdom(self.randomAS())
+		c.setCharisma(self.randomAS())
+		c.setProficiencyBonus()
+		c.setInspiration()
+		c.setAC()
+		c.setSpeed()
+		c.setLevel()
+		c.setXP()
+		c.setBackGround()
+		c.show()
 
 	def randomAS(self):
 		value = 0
@@ -49,7 +74,5 @@ class Wizard:
 		c.setXP()
 		c.setBackGround()
 		c.show()
-		#print("Player name: " + c.playerName)
-		#print("Character name: " + c.character_name)
 
 	
